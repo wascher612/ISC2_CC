@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISC2 Domain 3.1: Physical Controls Interactive</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .category {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 15px;
+            width: 280px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .category h2 {
+            color: #3498db;
+            margin-top: 0;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+        .content-area {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-top: 30px;
+            min-height: 300px;
+        }
+        .content-title {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .content-body {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .example-list {
+            padding-left: 20px;
+        }
+        .example-list li {
+            margin-bottom: 8px;
+        }
+        .back-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+        .image-container {
+            text-align: center;
+            margin: 15px 0;
+        }
+        .image-placeholder {
+            background-color: #eee;
+            width: 100%;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            color: #777;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>ISC2 Domain 3.1: Understanding Physical Controls</h1>
+    
+    <div class="container">
+        <div class="category" onclick="showContent('perimeter')">
+            <h2>Perimeter Security</h2>
+            <p>Physical barriers and controls that protect the outermost boundary of a facility.</p>
+        </div>
+        
+        <div class="category" onclick="showContent('building')">
+            <h2>Building Security</h2>
+            <p>Controls that protect the physical structure and entry points of buildings.</p>
+        </div>
+        
+        <div class="category" onclick="showContent('internal')">
+            <h2>Internal Security</h2>
+            <p>Controls within a building that protect specific areas, assets, and information.</p>
+        </div>
+        
+        <div class="category" onclick="showContent('environmental')">
+            <h2>Environmental Controls</h2>
+            <p>Systems that protect against environmental threats and ensure operational continuity.</p>
+        </div>
+        
+        <div class="category" onclick="showContent('personnel')">
+            <h2>Personnel Controls</h2>
+            <p>Procedures and technologies that manage human access and behavior.</p>
+        </div>
+        
+        <div class="category" onclick="showContent('monitoring')">
+            <h2>Monitoring & Surveillance</h2>
+            <p>Systems that observe, record, and alert about physical security events.</p>
+        </div>
+    </div>
+    
+    <div class="content-area">
+        <div id="default-content">
+            <h2 class="content-title">Physical Security Controls Overview</h2>
+            <p>Welcome to the interactive guide on ISC2 Domain 3.1: Understanding Physical Controls.</p>
+            <p>Physical security controls are the first line of defense in protecting information assets. They include measures designed to prevent unauthorized physical access to protected resources and guide appropriate behavior while in the vicinity of those resources.</p>
+            <p>Click on any category above to explore specific physical security controls, their purposes, examples, and best practices.</p>
+            <div class="image-container">
+                <div class="image-placeholder">Layered Physical Security Model Diagram</div>
+            </div>
+            <p>Physical controls work together in a defense-in-depth approach, creating multiple layers of protection that an adversary would need to overcome.</p>
+        </div>
+        
+        <div id="perimeter-content" class="content-body">
+            <h2 class="content-title">Perimeter Security</h2>
+            <p>Perimeter security represents the outermost layer of physical security, establishing the boundary between public and private space.</p>
+            
+            <h3>Key Components:</h3>
+            <ul>
+                <li><strong>Fences and Gates:</strong> Physical barriers that define property boundaries and control entry points.</li>
+                <li><strong>Bollards:</strong> Short posts that prevent vehicle ramming attacks.</li>
+                <li><strong>Security Lighting:</strong> Illumination that deters intruders and supports surveillance.</li>
+                <li><strong>Natural Barriers:</strong> Landscaping elements like berms, water features, or dense vegetation.</li>
+                <li><strong>Clear Zones:</strong> Unobstructed areas that provide visibility and eliminate hiding places.</li>
+            </ul>
+            
+            <h3>Design Principles:</h3>
+            <p>Effective perimeter security follows Crime Prevention Through Environmental Design (CPTED) principles:</p>
+            <ul>
+                <li>Natural surveillance - maximizing visibility</li>
+                <li>Natural access control - guiding movement through space</li>
+                <li>Territorial reinforcement - clearly defining ownership</li>
+                <li>Maintenance - preserving intended functions and appearance</li>
+            </ul>
+            
+            <div class="image-container">
+                <div class="image-placeholder">Perimeter Security Elements Diagram</div>
+            </div>
+            
+            <button class="back-button" onclick="showDefaultContent()">Back to Overview</button>
+        </div>
+        
+        <div id="building-content" class="content-body">
+            <h2 class="content-title">Building Security</h2>
+            <p>Building security controls protect the physical structure and manage access to the facility.</p>
+            
+            <h3>Key Components:</h3>
+            <ul>
+                <li><strong>Doors and Locks:</strong> Hardened entry points with mechanical or electronic locking mechanisms.</li>
+                <li><strong>Mantraps/Security Airlocks:</strong> Double-door systems that prevent tailgating and unauthorized access.</li>
+                <li><strong>Access Control Systems:</strong> Electronic systems using credentials to grant or deny access.</li>
+                <li><strong>Reception and Guards:</strong> Human monitoring and control of building entry.</li>
+                <li><strong>Visitor Management:</strong> Procedures for registering, badging, and escorting visitors.</li>
+            </ul>
+            
+            <h3>Authentication Methods:</h3>
+            <p>Building access often employs multi-factor authentication:</p>
+            <ul>
+                <li><strong>Something you have:</strong> Keys, badges, smart cards</li>
+                <li><strong>Something you know:</strong> PINs, passwords</li>
+                <li><strong>Something you are:</strong> Biometrics (fingerprints, retina scans)</li>
+            </ul>
+            
+            <div class="image-container">
+                <div class="image-placeholder">Building Access Control Systems Diagram</div>
+            </div>
+            
+            <button class="back-button" onclick="showDefaultContent()">Back to Overview</button>
+        </div>
+        
+        <div id="internal-content" class="content-body">
+            <h2 class="content-title">Internal Security</h2>
+            <p>Internal security controls protect specific areas, assets, and information within a facility.</p>
+            
+            <h3>Key Components:</h3>
+            <ul>
+                <li><strong>Secure Areas:</strong> Specially protected zones like server rooms, research labs, or executive offices.</li>
+                <li><strong>Safes and Vaults:</strong> Physical containers for protecting valuable assets.</li>
+                <li><strong>Cable Management:</strong> Protection of network infrastructure from tampering or damage.</li>
+                <li><strong>Equipment Security:</strong> Physical locks, enclosures, and mounting for computing assets.</li>
+                <li><strong>Document Security:</strong> Secure storage, handling, and destruction of sensitive information.</li>
+            </ul>
+            
+            <h3>Data Center Security:</h3>
+            <p>Data centers require specialized internal controls:</p>
+            <ul>
+                <li>Raised floors for cable management and airflow</li>
+                <li>Equipment racks with locking mechanisms</li>
+                <li>Hot/cold aisle configuration</li>
+                <li>Fire suppression systems (often non-water based)</li>
+                <li>Redundant power and cooling systems</li>
+            </ul>
+            
+            <div class="image-container">
+                <div class="image-placeholder">Data Center Security Layout</div>
+            </div>
+            
+            <button class="back-button" onclick="showDefaultContent()">Back to Overview</button>
+        </div>
+        
+        <div id="environmental-content" class="content-body">
+            <h2 class="content-title">Environmental Controls</h2>
+            <p>Environmental controls protect against natural and man-made environmental threats to ensure operational continuity.</p>
+            
+            <h3>Key Components:</h3>
+            <ul>
+                <li><strong>Fire Detection and Suppression:</strong> Systems to detect and extinguish fires.</li>
+                <li><strong>HVAC Systems:</strong> Climate control to maintain appropriate temperature and humidity.</li>
+                <li><strong>Water Detection:</strong> Sensors to detect leaks or flooding.</li>
+                <li><strong>Power Management:</strong> UPS, generators, and power conditioning equipment.</li>
+                <li><strong>EMI/RFI Shielding:</strong> Protection against electromagnetic and radio frequency interference.</li>
+            </ul>
+            
+            <h3>Fire Suppression Types:</h3>
+            <p>Different environments require different fire suppression approaches:</p>
+            <ul>
+                <li><strong>Water Sprinklers:</strong> Traditional but potentially damaging to electronics</li>
+                <li><strong>FM-200:</strong> Clean agent that leaves no residue</li>
+                <li><strong>Inert Gas:</strong> Reduces oxygen levels to suppress fire</li>
+                <li><strong>Dry Chemical:</strong> For specific types of fires</li>
+                <li><strong>Pre-Action:</strong> Two-stage systems that prevent accidental discharge</li>
+            </ul>
+            
+            <div class="image-container">
+                <div class="image-placeholder">Environmental Control Systems Diagram</div>
+            </div>
+            
+            <button class="back-button" onclick="showDefaultContent()">Back to Overview</button>
+        </div>
+        
+        <div id="personnel-content" class="content-body">
+            <h2 class="content-title">Personnel Controls</h2>
+            <p>Personnel controls manage human access and behavior to protect physical and information assets.</p>
+            
+            <h3>Key Components:</h3>
+            <ul>
+                <li><strong>Background Checks:</strong> Pre-employment screening of personnel.</li>
+                <li><strong>Security Awareness Training:</strong> Education on security policies and procedures.</li>
+                <li><strong>Separation of Duties:</strong> Dividing critical functions among multiple people.</li>
+                <li><strong>Least Privilege:</strong> Providing only the access needed for job functions.</li>
+                <li><strong>Termination Procedures:</strong> Processes for revoking access when employment ends.</li>
+            </ul>
+            
+            <h3>Social Engineering Countermeasures:</h3>
+            <p>Protecting against human-based attacks:</p>
+            <ul>
+                <li>Tailgating prevention training</li>
+                <li>Visitor escort policies</li>
+                <li>Badge display requirements</li>
+                <li>Challenge procedures for unbadged individuals</li>
+                <li>Clean desk policies</li>
+            </ul>
+            
+            <div class="image-container">
+                <div class="image-placeholder">Personnel Security Process Flowchart</div>
+            </div>
+            
+            <button class="back-button" onclick="showDefaultContent()">Back to Overview</button>
+        </div>
+        
+        <div id="monitoring-content" class="content-body">
+            <h2 class="content-title">Monitoring & Surveillance</h2>
+            <p>Monitoring and surveillance systems observe, record, and alert about physical security events.</p>
+            
+            <h3>Key Components:</h3>
+            <ul>
+                <li><strong>CCTV Systems:</strong> Video surveillance of facilities and perimeters.</li>
+                <li><strong>Intrusion Detection Systems:</strong> Sensors that detect unauthorized entry.</li>
+                <li><strong>Motion Detectors:</strong> Devices that detect movement in protected areas.</li>
+                <li><strong>Alarm Systems:</strong> Notification mechanisms for security events.</li>
+                <li><strong>Security Operations Center:</strong> Centralized monitoring of security systems.</li>
+            </ul>
+            
+            <h3>Types of Intrusion Detection:</h3>
+            <p>Different technologies detect different types of intrusion:</p>
+            <ul>
+                <li><strong>Photoelectric:</strong> Beam interruption detection</li>
+                <li><strong>Microwave:</strong> Motion detection using microwave radiation</li>
+                <li><strong>Ultrasonic:</strong> High-frequency sound wave disruption</li>
+                <li><strong>Infrared:</strong> Heat detection from bodies</li>
+                <li><strong>Vibration:</strong> Detection of physical disturbance to surfaces</li>
+            </ul>
+            
+            <div class="image-container">
+                <div class="image-placeholder">Integrated Security Monitoring System</div>
+            </div>
+            
+            <button class="back-button" onclick="showDefaultContent()">Back to Overview</button>
+        </div>
+    </div>
+
+    <script>
+        function showContent(contentType) {
+            // Hide all content sections
+            document.querySelectorAll('.content-body').forEach(function(element) {
+                element.classList.remove('active');
+            });
+            
+            // Hide default content
+            document.getElementById('default-content').style.display = 'none';
+            
+            // Show selected content
+            document.getElementById(contentType + '-content').classList.add('active');
+        }
+        
+        function showDefaultContent() {
+            // Hide all content sections
+            document.querySelectorAll('.content-body').forEach(function(element) {
+                element.classList.remove('active');
+            });
+            
+            // Show default content
+            document.getElementById('default-content').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
